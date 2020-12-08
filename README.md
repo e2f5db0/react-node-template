@@ -1,5 +1,7 @@
 # React-node template
 
+A template for a React web application with node backend. Ready for deploying to Heroku.
+
 **Instructions**
 
 Clone the repository
