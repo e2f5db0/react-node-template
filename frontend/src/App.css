@@ -1,0 +1,196 @@
+/* Global styles */
+
+html {
+  background-color: gainsboro;
+}
+
+@font-face {
+  src: url('./fonts/AdventPro-Light.ttf');
+  font-family: AdventPro;
+}
+
+.App {
+  text-align: center;
+  font-family: AdventPro;
+}
+
+.Container {
+  margin: auto;
+  width: 90%;
+  font-size: calc(3px + 2vmin);
+}
+
+.Container-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Navbar {
+  margin-top: 3%;
+  margin: auto;
+  width: 100%;
+  height: 5em;
+  position: relative;
+  background-color: #253532;
+}
+
+.Navbar-logo {
+  vertical-align: middle;
+  height: 4em;
+  cursor: pointer;
+}
+
+.NavBar-heading {
+  margin-left: .5em;
+  color: gainsboro;
+  font-size: larger;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.Navbar-navigation {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.Navbar-item {
+  color: gainsboro;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem;
+}
+
+.Navbar-item:hover,
+.Navbar-item:active {
+  color: white;
+  cursor: pointer;
+}
+
+.Navbar-items ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.Navbar-spacer {
+  flex: 1;
+}
+
+.Toggle-Button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Toggle-Button:focus {
+  outline: none;
+}
+
+.Toggle-Button-line {
+  width: 40px;
+  height: 3px;
+  background: gainsboro;
+}
+
+.Button-rng {
+  margin-top: .5em;
+  width: 300px;
+  height: 70px;
+  border: none;
+  background-color: black;
+  color: #d1ebff;
+  font-family: Upheaval;
+  font-size: 2rem;
+}
+
+.Button-rng:hover {
+  transform: scale(1.05);
+}
+
+.Backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.Side-Drawer {
+  height: 100vh;
+  background-color: #181A1B;
+  box-shadow: 2px 0px 7px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  max-width: 400px;
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+.Side-Drawer.open {
+  transform: translateX(0);
+}
+
+.Side-Drawer ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Side-Drawer-item {
+  text-align: left;
+  color: gainsboro;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: calc(15px + 1vmin);
+  padding: 1rem;
+}
+
+.Side-Drawer-item:hover, 
+.Side-Drawer-item:active {
+  color: white;
+}
+
+.Side-Drawer li {
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 900px) {
+  .Navbar-items {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .Toggle-Button {
+    display: none;
+  }
+}
+
+.Arrow-icon {
+  width: 3em;
+  cursor: pointer;
+}
+
+@media(max-width: 447px) {
+  .Container {
+    margin-top: 1.5em;
+    font-size: large;
+  }
+}
