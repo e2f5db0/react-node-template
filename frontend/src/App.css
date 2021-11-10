@@ -1,23 +1,27 @@
 /* Global styles */
 
 html {
-  background-color: gainsboro;
+  background-color: #151515;
 }
 
 @font-face {
-  src: url('./fonts/AdventPro-Light.ttf');
-  font-family: AdventPro;
+  src: url('./fonts/Roboto-Light.ttf');
+  font-family: Roboto;
 }
 
 .App {
   text-align: center;
-  font-family: AdventPro;
+  font-family: Roboto;
+  color: #B4A5A5;
 }
 
 .Container {
   margin: auto;
   width: 90%;
   font-size: calc(3px + 2vmin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Container-flex {
@@ -169,6 +173,92 @@ html {
 
 .Side-Drawer li {
   margin: 0.5rem 0;
+}
+
+.Choice-container {
+  padding: .5em;
+  margin-bottom: .5em;
+  border-radius: 1em;
+  font-size: 2.5rem;
+  background-color: #3C415C;
+  width: 60%;
+}
+
+.Choice-container:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.Input-field {
+  background-color: #3C415C;
+  width: 70%;
+  border: none;
+  height: 1.5em;
+  border-radius: .1em;
+  font-size: 2.3rem;
+  color: #B4A5A5;
+  padding: .2em;
+}
+
+.btn {
+  margin-top: 1em;
+  background-color: #3C415C;
+  width: 5em;
+  height: 3em;
+  border: none;
+  border-radius: .1em;
+  color: #B4A5A5;
+  font-size: 1.5rem;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.Topic-list {
+  margin-top: 2em;
+  padding: 2em;
+  border-radius: 2em;
+  width: 70%;
+  background-color: #3C415C;
+}
+
+.Delete-cross {
+  color: #B92B27;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.Vote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Topic-vote {
+  width: 50%;
+  height: 3em;
+  border-radius: 3em;
+  padding-top: .5em;
+  background-color: #3C415C;
+  border: 2px solid #301B3F;
+  margin-bottom: .5em;
+}
+
+.Topic-vote:hover {
+  background-color: #301B3F;
+  cursor: pointer;
+}
+
+.Voted {
+  background-color: #301B3F;
+}
+
+.Winner-topic {
+  margin: 0;
+  margin-bottom: 1em;
+  font-size: 2.5rem;
 }
 
 @media (max-width: 900px) {
