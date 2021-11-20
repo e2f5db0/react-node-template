@@ -1,65 +1,50 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Login from './components/Login'
 import Main from './components/Main'
-import AddTopics from './components/AddTopics'
-import TopicSelection from './components/TopicSelection'
-import Vote from './components/Vote'
+import FirstOption from './components/FirstOption'
+import SecondOption from './components/SecondOption'
 
 const App = () => {
 
-    const [user, setUser] = useState(undefined)
+  const history = useHistory()
 
-    const history = useHistory()
+  const setView = (view) => {
+    history.push(`/${view}`)
+  }
 
-    const setView = (view) => {
-        history.push(`/${view}`)
-    }
+  const views = {}
 
-    const views = {}
+  views['main'] = <Main />
 
-    views['login'] = <Login setUser={setUser} />
+  views['firstOption'] = <FirstOption />
 
-    views['main'] = <Main user={user} setView={setView} />
+  views['secondOption'] = <SecondOption />
 
-    views['addTopics'] = <AddTopics user={user} />
+  return (
+    <div className="App">
+      <Navbar setBody={setView} />
+      <Switch>
+        <Route exact path='/'>
+          {views['main']}
+        </Route>
 
-    views['vote'] = <Vote setView={setView} user={user} />
+        <Route exact path='/main'>
+          {views['main']}
+        </Route>
 
-    views['topicSelection'] = <TopicSelection />
+        <Route exact path='/firstOption'>
+          {views['firstOption']}
+        </Route>
 
+        <Route exact path='/secondOption'>
+          {views['secondOption']}
+        </Route>
 
-    return (
-        <div className="App">
-            {
-                //<Navbar setBody={setView} />
-            }
-            <Switch>
-                <Route exact path='/'>
-                    {user ? views['main'] : views['login']}
-                </Route>
-
-                <Route exact path='/main'>
-                    {user ? views['main'] : views['login']}
-                </Route>
-
-                <Route exact path='/addTopics'>
-                    {user ? views['addTopics'] : views['login']}
-                </Route>
-
-                <Route exact path='/vote'>
-                    {user ? views['vote'] : views['login']}
-                </Route>
-
-                <Route exact path='/topicSelection'>
-                    {user ? views['topicSelection'] : views['login']}
-                </Route>
-
-            </Switch>
-        </div>
-    )
+      </Switch>
+    </div>
+  )
 
 }
 

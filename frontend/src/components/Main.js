@@ -1,19 +1,11 @@
 import React from 'react'
 
-const Main = (props) => {
+const Main = () => {
 
   return (
     <div className='Container'>
-      <h1>Tietopiiri <small>({props.user})</small> </h1>
-      <div className='Choice-container' onClick={() => props.setView('addTopics')}>
-          <p>Lisää aihe</p>
-      </div>
-      <div className='Choice-container' onClick={() => props.setView('vote')}>
-          <p>Äänestä</p>
-      </div>
-      <div className='Choice-container' onClick={() => props.setView('topicSelection')}>
-          <p>Aihevalinta</p>
-      </div>
+      <h1>React Node Template</h1>
+      <p>–with mobile responsive navbar</p>
     </div>
   )
 }
