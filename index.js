@@ -10,6 +10,14 @@ app.use(cors())
 
 app.use(express.static('build'))
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
+app.get('/datacheck', (req, res) => {
+  res.send({ data: 'test', id: 1 })
+})
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/build/index.html'))
 })

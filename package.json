@@ -4,20 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "formatdb": "node mongo.js",
-    "restart": "killall node | npm run dev"
+    "build": "cd ./frontend && npm run build",
+    "restart": "killall node | npm run dev",
+    "test": "cd ./frontend && jest",
+    "eslint": "cd ./frontend && npm run eslint",
+    "cypress:open": "cypress open",
+    "start:test": "cross-env NODE_ENV=test node index.js",
+    "test:e2e": "cypress run",
+    "formatdb": "node mongo.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "author": "e2f5db0",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "cypress": "^10.2.0",
+    "jest": "^24.9.0",
     "nodemon": "^2.0.2"
   }
 }

@@ -24,8 +24,8 @@ const Navbar = ({ setBody }) => {
           <div className='Navbar-spacer'></div>
           <div className='Navbar-items'>
             <ul>
-              <li className='Navbar-item' onClick={() => setBody('firstOption')}>First Option</li>
-              <li className='Navbar-item' onClick={() => setBody('secondOption')}>Second Option</li>
+              <li id='firstOption' className='Navbar-item' onClick={() => setBody('firstOption')}>First Option</li>
+              <li id='secondOption' className='Navbar-item' onClick={() => setBody('secondOption')}>Second Option</li>
             </ul>
           </div>
         </nav>
