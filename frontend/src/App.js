@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './App.css'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Switch, Route, useHistory } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Main from './components/Main'
 import FirstOption from './components/FirstOption'
@@ -15,10 +15,10 @@ const App = () => {
       .then(() => 0)
   }, [])
 
-  const navigate = useNavigate()
+  const history = useHistory()
 
   const setView = (view) => {
-    navigate(`/${view}`)
+    history.push(`/${view}`)
   }
 
   const views = {}
@@ -32,7 +32,7 @@ const App = () => {
   return (
     <div className="App">
       <Navbar setBody={setView} />
-      <Routes>
+      <Switch>
         <Route exact path='/'>
           {views['main']}
         </Route>
@@ -49,7 +49,7 @@ const App = () => {
           {views['secondOption']}
         </Route>
 
-      </Routes>
+      </Switch>
     </div>
   )
 
