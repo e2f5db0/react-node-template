@@ -2,7 +2,7 @@
 
 A template for a React web application with node backend. Ready for deploying to Heroku.
 
-**Instructions**
+## Development
 
 Clone the repository
 
@@ -25,29 +25,55 @@ PORT=3001
 Before running the app you need to install requirements:
 
 ```bash
-npm install
+> npm install
+> cd ./frontend/
+> npm install
 ```
 
-**Available scripts**
+## Available scripts (run in the root folder)
 
 Run in development mode (nodemon):
 
 ```bash
-npm run dev
+> npm run dev
 ```
 
-Run on a server
+Build the production version (optimized)
 
 ```bash
-npm start
+> npm run build
 ```
 
-# Push to Github
-
-Changes made to the frontend have to be built.
+Start the production server
 
 ```bash
-npm run build
+> npm start
 ```
 
-Then you can commit & push normally.
+### Linting
+
+Make sure to lint the code before trying to make PRs and fix all lint issues
+
+```bash
+> npm run eslint
+```
+
+### Testing
+
+Run unit tests (jest)
+
+```bash
+> npm run test
+```
+
+Run end-to-end tests (cypress)
+
+```bash
+> npm run test:e2e
+```
+
+e2e interactive mode
+
+```bash
+> npm run cypress:open
+```
